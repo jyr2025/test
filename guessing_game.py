@@ -1,4 +1,5 @@
 import random
+import sys
 
 def play_game():
     """Implements the core logic of the guessing game."""
@@ -38,11 +39,11 @@ if __name__ == "__main__":
     while True:
         play_game()
         while True:
-            play_again_input = input("Do you want to play again? (yes/no): ").lower()
+            play_again_input = input("Do you want to play again? (yes/no): ").strip().lower()
             if play_again_input == "yes":
                 break  # Breaks the inner loop, continues the outer loop for a new game
             elif play_again_input == "no":
                 print("Thanks for playing!")
-                exit()  # Exits the program
+                sys.exit()  # Exits the program cleanly
             else:
                 print("Invalid input. Please type 'yes' or 'no'.")
